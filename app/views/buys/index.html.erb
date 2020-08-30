@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <%= @buys.each do |buy| %>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <%=link_to buy_path(buy.id) do %>
+          <%= attachment_image_tag buy, :buy_post_image, size: '400x400' %>
+            <div class="caption">
+                <%= buy.buy_caption %>
+            </div>
+          <% end %>
+        </div>
+
+        <img src="img.jpg" class="img-circle" alt="参考画像" width="200" height="200">
+        <%= buy.user.name %>
+      </div>
+    <% end %>
+  </div>
+</div>

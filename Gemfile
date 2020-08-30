@@ -64,3 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+
+# 画像投稿
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
