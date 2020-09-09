@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_29_044808) do
+ActiveRecord::Schema.define(version: 2020_08_31_025441) do
 
   create_table "buys", force: :cascade do |t|
     t.string "buy_post_image_id"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 2020_08_29_044808) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+  end
+
+  create_table "releases", force: :cascade do |t|
+    t.string "release_image_id"
+    t.string "release_caption"
+    t.text "release_message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "buy_id"
+    t.string "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -30,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_08_29_044808) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "profile_image_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

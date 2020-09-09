@@ -8,14 +8,14 @@ class BuysController < ApplicationController
     @buy = Buy.new(buy_params)
     @buy.user_id = current_user.id
     if @buy.save
-      redirect_to buy_path(@buy.id)
+      redirect_to new_buy_release_path(@buy)
     else
       render :new
     end
   end
 
   def index
-    @buys = Buy.all
+    @buys = Buy.all.order("created_at DESC").page(params[:page]).per(9)
   end
 
   def show
@@ -30,6 +30,6 @@ class BuysController < ApplicationController
 
 private
   def buy_params
-    params.require(:buy).permit(:buy_post_image, :buy_caption, :buy_message)
+    params.require(:buy).permit(:buy_post_image, :buy_caption, :buy_message, :buy_id)
   end
 end

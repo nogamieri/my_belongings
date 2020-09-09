@@ -3,31 +3,31 @@
     <div class="row">
       <div class="post-meta-top">
         <div class="col-sm-1 media-left">
-          <%= attachment_image_tag @buy.user, :profile_image, size: '60x60' %>
+          <%= attachment_image_tag @release.user, :profile_image, size: '60x60' %>
         </div>
         <div class="col-sm-9" media-body>
-          <h4 class="post-title"><%= @buy.buy_caption %></h4>
-          <%= link_to @buy.user.name, user_path(current_user.id) %>
+          <h4 class="post-title"><%= @release.release_caption %></h4>
+          <%= link_to @release.user.name, user_path(current_user.id) %>
         </div>
         <div class="col-sm-2">
           いいね
         </div>
         <div class="post-image">
-         <%= attachment_image_tag @buy, :buy_post_image, size: width='500', class: 'img-responsive center-block' %>
+         <%= attachment_image_tag @release, :release_image, size: width='500', class: 'img-responsive center-block' %>
         </div>
         <div>
-          <%= @buy.buy_message %>
+          <%= @release.release_message %>
         </div>
         <div>
-          <% if @buy.user == current_user %>
-            <%= link_to"削除",buy_path(@buy),method: :delete %>
+          <% if @release.release == current_user %>
+            <%= link_to"削除",release_path(@release),method: :delete %>
           <% end %>
       </div>
     </div>
         <div class="post-content">
           <ul class="meta-info-cells v4 float-wrapper">
             <li>
-              <i class="fa fa-calendar"></i><%= @buy.created_at.strftime('%Y/%m/%d') %>
+              <i class="fa fa-calendar"></i><%= @release.created_at.strftime('%Y/%m/%d') %>
             </li>
           </ul>
         </div>

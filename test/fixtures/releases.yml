@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  release_image_id: MyString
+  release_caption: MyString
+  release_message: MyText
+
+two:
+  release_image_id: MyString
+  release_caption: MyString
+  release_message: MyText
