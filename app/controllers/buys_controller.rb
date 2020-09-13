@@ -8,7 +8,7 @@ class BuysController < ApplicationController
     @buy = Buy.new(buy_params)
     @buy.user_id = current_user.id
     if @buy.save
-      redirect_to new_buy_release_path(@buy)
+      redirect_to buy_path(@buy)
     else
       render :new
     end
@@ -20,6 +20,7 @@ class BuysController < ApplicationController
 
   def show
     @buy = Buy.find(params[:id])
+    # @release = Release.find(params[:release_id])
   end
 
   def destroy

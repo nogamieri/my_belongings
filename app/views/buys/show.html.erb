@@ -18,9 +18,11 @@
         <div>
           <%= @buy.buy_message %>
         </div>
+        
         <div>
           <% if @buy.user == current_user %>
-            <%= link_to"削除",buy_path(@buy),method: :delete %>
+            <%= link_to"削除",buy_path(@buy),method: :delete %><br>
+            <%= link_to"かわりに手放す物を投稿",new_buy_release_path(@buy) %>
           <% end %>
       </div>
     </div>

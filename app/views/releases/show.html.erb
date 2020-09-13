@@ -7,7 +7,7 @@
         </div>
         <div class="col-sm-9" media-body>
           <h4 class="post-title"><%= @release.release_caption %></h4>
-          <%= link_to @release.user.name, user_path(current_user.id) %>
+          <%= link_to @release.buy.user.name, user_path(current_user.id) %>
         </div>
         <div class="col-sm-2">
           いいね
@@ -19,8 +19,8 @@
           <%= @release.release_message %>
         </div>
         <div>
-          <% if @release.release == current_user %>
-            <%= link_to"削除",release_path(@release),method: :delete %>
+          <% if @release.buy.user == current_user %>
+            <%= link_to"削除",buy_release_path(@buy,@release),method: :delete %>
           <% end %>
       </div>
     </div>
