@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
-    <%= @buys.each do |buy| %>
+    <% @buys.each do |buy| %>
       <div class="col-sm-4 float-left">
+        <%# <% if @release.buy.user == current_user %> %>
         <div class="thumbnail">
           <%=link_to buy_path(buy.id) do %>
           <%= attachment_image_tag buy, :buy_post_image, size: '400x400' %>
@@ -15,6 +16,7 @@
         <%= buy.user.name %>
       </div>
     <% end %>
+  <%# <% end %> %>
   </div>
   <div>
     <%= paginate @buys %>

@@ -12,17 +12,38 @@
         <div class="col-sm-2">
           いいね
         </div>
-        <div class="post-image">
+
+      <div class="row">
+        <div class="post-image col-sm-6">
          <%= attachment_image_tag @buy, :buy_post_image, size: width='500', class: 'img-responsive center-block' %>
         </div>
-        <div>
-          <%= @buy.buy_message %>
-        </div>
-        
+        <div class="col-sm-4">
+          <div>
+            <%= @buy.buy_message %><br>
+            <i class="fa fa-calendar"></i><%= @buy.created_at.strftime('%Y/%m/%d') %>
+          </div>
+
+
+            <% if @buy.release.present? %>
+              <h5>代わりに手放したもの</h5>
+              <div class="thumbnail release-thumbnail">
+                <%= attachment_image_tag @buy.release, :release_image %>
+              </div>
+                <%= @buy.release.release_caption %>
+                <%= @buy.release.release_message %>
+
+            <% elsif @buy.user == current_user %>
+              <%= link_to"かわりに手放す物を投稿",new_buy_release_path(@buy) %>
+            <% else %>
+
+            <% end %>
+
+          
+
+
         <div>
           <% if @buy.user == current_user %>
             <%= link_to"削除",buy_path(@buy),method: :delete %><br>
-            <%= link_to"かわりに手放す物を投稿",new_buy_release_path(@buy) %>
           <% end %>
       </div>
     </div>

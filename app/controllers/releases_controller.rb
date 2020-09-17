@@ -28,8 +28,9 @@ class ReleasesController < ApplicationController
   end
   def destroy
     @release = Release.find(params[:id])
+    @buy = Buy.find(params[:id])
     @release.destroy
-    redirect_to releases_path
+    redirect_to buy_path(@buy)
   end
 
   private

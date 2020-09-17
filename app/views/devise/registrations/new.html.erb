@@ -6,34 +6,38 @@
     <div class="row">
       <div class="form-group col-xs-4">
         <%= f.label :名前 %><br />
-        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control mb10" %>
       </div>
     </div>
 
     <div class="row">
       <div class="form-group col-xs-4">
         <%= f.label :メールアドレス %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control mb10" %>
       </div>
     </div>
 
 
-    <div class="field">
-      <%= f.label :パスワード %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> 文字以上</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
+    <div class="row">
+      <div class="form-group col-xs-4">
+        <%= f.label :パスワード %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> 文字以上</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control mb10" %>
+      </div>
     </div>
 
-    <div class="field">
+    <div class="row">
+      <div class="form-group col-xs-4">
       <%= f.label :パスワード（確認用） %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control mb5" %>
+      </div>
     </div>
 
     <div class="row">
       <div class="actions form-group col-xs-4">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "アカウントを作成する", class:"btn btn-md btn-block btn-base-1 mt-20 btn-info" %>
       </div>
     </div>
   <% end %>
