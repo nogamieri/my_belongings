@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @buys = @user.buys.order("created_at DESC").page(params[:page]).per(9)
+    @favorite_buys = @user.favorite_buys
   end
 
   def edit

@@ -65,6 +65,7 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 
+
 # 画像投稿
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
@@ -76,3 +77,5 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
+
+gem 'font-awesome-rails'

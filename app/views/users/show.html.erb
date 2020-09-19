@@ -27,5 +27,9 @@
         </div>
       </div>
     <% end %>
+    <% @favorite_buys.each do |buy| %>
+  <hr>
+  <%# <!-- <p><span>ファボ内容: </span><%=link_to buy.body, buy_path(buy.id) %></p> --> %>
+<% end %>
   </div>
 </div>

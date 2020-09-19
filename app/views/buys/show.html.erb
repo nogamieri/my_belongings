@@ -1,29 +1,43 @@
 <section class="sct-color-1 slice">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="post-meta-top">
-        <div class="col-sm-1 media-left">
-          <%= attachment_image_tag @buy.user, :profile_image, size: '60x60' %>
-        </div>
-        <div class="col-sm-9" media-body>
-          <h4 class="post-title"><%= @buy.buy_caption %></h4>
-          <%= link_to @buy.user.name, user_path(current_user.id) %>
-        </div>
-        <div class="col-sm-2">
-          いいね
+
+      <div class="media">
+        <div class="col-sm-1">
+          <div class="media-left media-top">
+            <div class="media-object">
+              <%= attachment_image_tag @buy.user, :profile_image, size: '60x60' %>
+            </div>
+          </div>
         </div>
 
-      <div class="row">
-        <div class="post-image col-sm-6">
-         <%= attachment_image_tag @buy, :buy_post_image, size: width='500', class: 'img-responsive center-block' %>
+        <div class="col-sm-5">
+          <div class="media-body">
+            <h4 class="post-title"><%= @buy.buy_caption %></h4>
+            <%= link_to @buy.user.name, user_path(current_user.id) %>
+          </div>
         </div>
-        <div class="col-sm-4">
-          <div>
-            <%= @buy.buy_message %><br>
-            <i class="fa fa-calendar"></i><%= @buy.created_at.strftime('%Y/%m/%d') %>
+
+        <div class="col-sm-2 col-sm-offset-4">
+          <div id="favorites_buttons_<%= @buy.id %>">
+             <%= render partial: 'favorites/favorite', locals: { buy: @buy} %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="post-image col-sm-12">
+        <div class="box">
+          <%= attachment_image_tag @buy, :buy_post_image, size: '700x700', class: 'img-responsive center-block' %>
+        </div>
+        <div class="detail-block">
+          <div class="buy-message">
+            <%= @buy.buy_message %>
           </div>
 
-
+          <div>
             <% if @buy.release.present? %>
               <h5>代わりに手放したもの</h5>
               <div class="thumbnail release-thumbnail">
@@ -37,23 +51,20 @@
             <% else %>
 
             <% end %>
-
-          
-
-
-        <div>
-          <% if @buy.user == current_user %>
-            <%= link_to"削除",buy_path(@buy),method: :delete %><br>
-          <% end %>
-      </div>
-    </div>
-        <div class="post-content">
-          <ul class="meta-info-cells v4 float-wrapper">
-            <li>
-              <i class="fa fa-calendar"></i><%= @buy.created_at.strftime('%Y/%m/%d') %>
-            </li>
-          </ul>
+            <% if @buy.user == current_user %>
+              <%= link_to"削除",buy_path(@buy),method: :delete %><br>
+            <% end %>
+          </div>
         </div>
       </div>
+    </div>
+
+
+      <div class="row">
+        <% if @buy.user == current_user %>
+          <%= link_to"削除",buy_path(@buy),method: :delete %><br>
+        <% end %>
       </div>
+
+  </div>
 </section>

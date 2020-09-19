@@ -8,3 +8,41 @@ li{
   width: 200px;
   height: auto;
 }
+
+.post-image {
+  padding-top: 20px;
+}
+.detail-block {
+  margin-top: 15px;
+  margin: 0 auto;
+  background-color: white;
+  width: 700px;
+  padding: 5px;
+}
+
+.container-fluid {
+margin-right: auto;
+margin-left: auto;
+max-width: 900px;
+}
+
+.buy-message{
+  margin: 20px 0 20px;
+  padding: 5px;
+}
+
+.box {
+position: relative;
+}
+.box img {
+background: #fff;
+padding: 10px 10px 40px 10px;
+border: 1px solid #c3c3c3;
+}
+// .box p {
+// width: 364px;
+// position: absolute;
+// bottom: 0;
+// left: 0;
+// text-align: center;
+// }
