@@ -10,7 +10,7 @@
   </head>
 
   <body>
-  <div class="container">
+    <div class="container">
 
       <header class="menu">
         <div class="header-block">
@@ -41,16 +41,16 @@
                 <%= link_to root_path do %>
                   <%= image_tag "logo.png", width: '50%', height: '50%' %>
                 <% end %>
-              </h1>
-            </div>
+                </h1>
+              </div>
 
               <div class="col-sm-3 col-sm-offset-5">
-              <nav class="pc-nav">
-                  <ul class="header-menu">
-                      <li><%= link_to "新規登録", new_user_registration_path %></li>
-                      <li><%= link_to "ログイン", new_user_session_path %></li>
-                  </ul>
-              </nav>
+                <nav class="pc-nav">
+                    <ul class="header-menu">
+                        <li><%= link_to "新規登録", new_user_registration_path %></li>
+                        <li><%= link_to "ログイン", new_user_session_path %></li>
+                    </ul>
+                </nav>
               </div>
             <% end %>
           </div>
@@ -58,14 +58,12 @@
 
       </header>
 
-    <!-- </nav> -->
-  </div>
-
-  <div class="container index-block">
-    <%= yield %>
     </div>
 
-  <footer>
-  </footer>
+    <div class="container index-block">
+      <%= yield %>
+    </div>
+
+    <footer></footer>
   </body>
 </html>

@@ -16,12 +16,6 @@ class ReleasesController < ApplicationController
     end
   end
 
-
-  def index
-    # @user = User.find(params[:id])
-    @releases = Release.all.order("created_at DESC").page(params[:page]).per(9)
-  end
-
   def show
     @release = Release.find(params[:id])
     @buy = Buy.find(params[:id])
