@@ -1,8 +1,8 @@
 <section class="sct-color-1 slice">
-  <div class="container-fluid">
-    <div class="row">
+  <div class="container-fluid box-buy">
+    <div class="row user-info">
 
-      <div class="media">
+      <div class="media profile-block">
         <div class="col-sm-1">
           <div class="media-left media-top">
             <div class="media-object">
@@ -14,7 +14,7 @@
         <div class="col-sm-5">
           <div class="media-body">
             <h4 class="post-title"><%= @buy.buy_caption %></h4>
-            <%= link_to @buy.user.name, user_path(current_user.id) %>
+            <%= link_to @buy.user.name, user_path(@buy.user_id) %>
           </div>
         </div>
 
@@ -28,43 +28,61 @@
     </div>
 
     <div class="row">
-      <div class="post-image col-sm-12">
+      <div class="buy-info col-sm-12">
         <div class="box">
-          <%= attachment_image_tag @buy, :buy_post_image, size: '700x700', class: 'img-responsive center-block' %>
+          <%= attachment_image_tag @buy, :buy_post_image, size: '650x650', class: 'img-responsive center-block' %>
         </div>
         <div class="detail-block">
           <div class="buy-message">
             <%= @buy.buy_message %>
           </div>
 
-          <div>
+          <div class="release_block">
             <% if @buy.release.present? %>
               <h5>代わりに手放したもの</h5>
-              <div class="thumbnail release-thumbnail">
-                <%= attachment_image_tag @buy.release, :release_image %>
+              <div class="box">
+                <div class="release-thumbnail">
+                  <%=link_to buy_release_path(@buy, @buy.release) do %>
+                  <%= attachment_image_tag @buy.release, :release_image, size: '250x250' %>
+                  <p><%= @buy.release.release_caption %></p>
+                  <% end %>
+                </div>
               </div>
-                <%= @buy.release.release_caption %>
-                <%= @buy.release.release_message %>
 
             <% elsif @buy.user == current_user %>
-              <%= link_to"かわりに手放す物を投稿",new_buy_release_path(@buy) %>
-            <% else %>
+              <%= link_to new_buy_release_path(@buy) do %>
+                <button type="button" class="btn btn-outline-info btn-sm">かわりに手放す物を投稿</button>
+              <% end %>
 
+            <% else %>
             <% end %>
+
             <% if @buy.user == current_user %>
-              <%= link_to"削除",buy_path(@buy),method: :delete %><br>
+              <%= link_to buy_path(@buy),method: :delete do %>
+              <button type="button" class="btn btn-outline-info btn-sm">削除</button>
+              <% end %>
             <% end %>
           </div>
         </div>
-      </div>
+        <!-- コメント投稿 -->
+          <div class="comments-area">
+            <div class="comment-title">
+              <h3 class="text-left", style="font-size:16px;">comments(<%= @comments.count %>)</h3>
+            </div>
+            <ul>
+              <li id="comments-area">
+                <%= render partial: 'comments/index', locals: { comments: @comments } %>
+              </li>
+            </ul>
+
+            <hr>
+            <% if user_signed_in? %>
+              <div class="comment-create">
+                <h3 class="text-left">comments</h3>
+                <%= render partial: 'comments/form', locals: { comment: @comment, buy: @buy } %>
+              </div>
+            <% end %>
+          </div>
     </div>
-
-
-      <div class="row">
-        <% if @buy.user == current_user %>
-          <%= link_to"削除",buy_path(@buy),method: :delete %><br>
-        <% end %>
-      </div>
-
   </div>
 </section>

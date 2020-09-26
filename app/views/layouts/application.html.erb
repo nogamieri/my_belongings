@@ -10,39 +10,60 @@
   </head>
 
   <body>
-    <nav class="navbar menu">
-    <div class="container">
-        <%= link_to "My belongings", root_path, class: "navbar-brand" %>
-        <!-- <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbar9">
-            <span class="navbar-toggler-icon"></span>
-        </button> -->
-        <div class="navbar-collapse navbar">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="nav-item active">
-              <% if user_signed_in? %>
-              <%= link_to "ログアウト", destroy_user_session_path, class: 'text-dark', method: :delete %>
+  <div class="container">
+    <!-- <nav class="navbar"> -->
 
-            </li>
-            <li class="nav-item">
-              <%= link_to '投稿フォーム', new_buy_path, class: 'text-dark' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'マイページ', user_path(current_user.id), class: 'text-dark' %>
-            </li>
-            <% else %>
-            <li class="nav-item">
-              <%= link_to "新規登録", new_user_registration_path, class: 'text-dark' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "ログイン", new_user_session_path, class: 'text-dark' %>
-            </li>
+      <header class="menu">
+        <div class="header-block">
+          <div class="row">
+            <% if user_signed_in? %>
+            <!-- ログイン後メニュー -->
+              <div class="col-sm-4">
+                <h1 class="site-title">
+                  <%= link_to buys_path do %>
+                    <%= image_tag "logo.png", width: '50%', height: '50%' %>
+                  <% end %>
+                </h1>
+              </div>
+
+              <div class="col-sm-4 col-sm-offset-4">
+              <nav class="pc-nav">
+                <ul class="header-menu">
+                  <li class="menu-list "><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+                  <li class="menu-list"><%= link_to "投稿フォーム", new_buy_path %></li>
+                  <li class="menu-list"><%= link_to "マイページ", user_path(current_user.id) %></li>
+                </ul>
+              </nav>
+              </div>
+              <% else %>
+              <!-- ログイン前メニュー -->
+              <div class="col-sm-4">
+                <h1 class="site-title">
+                <%= link_to root_path do %>
+                  <%= image_tag "logo.png", width: '50%', height: '50%' %>
+                <% end %>
+              </h1>
+            </div>
+
+              <div class="col-sm-3 col-sm-offset-5">
+              <nav class="pc-nav">
+                  <ul class="header-menu">
+                      <li class="menu-list"><%= link_to "新規登録", new_user_registration_path %></li>
+                      <li class="menu-list"><%= link_to "ログイン", new_user_session_path %></li>
+                  </ul>
+              </nav>
+              </div>
             <% end %>
-          </ul>
+          </div>
         </div>
-    </div>
-</nav>
 
+      </header>
 
+    <!-- </nav> -->
+  </div>
+
+  <div class="container index-block">
     <%= yield %>
+    </div>
   </body>
 </html>

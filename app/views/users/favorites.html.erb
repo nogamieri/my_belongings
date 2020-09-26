@@ -1,0 +1,30 @@
+<div class="container index-block">
+  <div class="row mx-sm-5 align-items-center header-profile">
+
+    <div class="col-sm-auto">
+      <h3>いいね一覧</h3>
+    </div>
+
+  <div class="row">
+    <% @favorites.each do |favorite| %>
+      <% buy = Buy.find_by(id: favorite.buy_id) %>
+        <div class="col-sm-4 float-left">
+          <div class="thumbnail">
+            <%=link_to buy_path(buy.id) do %>
+              <%= attachment_image_tag buy, :buy_post_image, size: '400x400' %>
+            <% end %>
+                <div class="caption">
+                  <%= buy.buy_caption %>
+                  <i class="fa fa-heart fa-1x" style="color: red;"></i> <%= buy.favorites.count %>
+                  <i class="fa fa-comment-o" aria-hidden="true"></i> <%= buy.comments.count %>
+                </div>
+          </div>
+
+        <%= attachment_image_tag buy.user, :profile_image, size: '60x60' %>
+        <%= buy.user.name %>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>

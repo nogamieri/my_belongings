@@ -4,20 +4,30 @@
 li{
   list-style: none;
 }
-.release-thumbnail{
-  width: 200px;
-  height: auto;
+.profile-block {
+  padding-top: 20px;
+}
+.box-buy {
+  background: #fff;
+  padding-top: 15px;
+}
+.thumbnail {
+  margin: 10px 0;
 }
 
-.post-image {
+.buy-info {
   padding-top: 20px;
 }
 .detail-block {
-  margin-top: 15px;
+  // margin-top: 5px;
   margin: 0 auto;
   background-color: white;
   width: 700px;
-  padding: 5px;
+  padding: 0 40px 40px;
+}
+
+.release_block{
+  margin: 50px 0 100px;
 }
 
 .container-fluid {
@@ -27,7 +37,7 @@ max-width: 900px;
 }
 
 .buy-message{
-  margin: 20px 0 20px;
+  margin: 10px 0 20px;
   padding: 5px;
 }
 
@@ -39,10 +49,37 @@ background: #fff;
 padding: 10px 10px 40px 10px;
 border: 1px solid #c3c3c3;
 }
-// .box p {
-// width: 364px;
-// position: absolute;
-// bottom: 0;
-// left: 0;
-// text-align: center;
-// }
+.box p {
+width: 364px;
+position: absolute;
+bottom: 0;
+left: 0;
+text-align: center;
+}
+h5 {
+  position: relative;
+  padding: 0.6em;
+  background: #F6F4EF;
+  width: 250px;
+  margin-bottom: 5px;
+}
+
+.comment-title {
+  background-color: #F6F4EF;
+  font-size: 16px;
+  padding-left: 30px;
+  height: 60px;
+  width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+  line-height:100px;
+}
+.comment-title div {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.comment-area {
+  width: 100%;
+  padding: 20px;
+}

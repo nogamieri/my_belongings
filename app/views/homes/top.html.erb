@@ -1,23 +1,23 @@
-<div class="container">
+
   <div class="row">
-    <div class="col-sm-10 header-title">
-      ひとつずつを大切にする、最初のきっかけ
+    <div class="home-page">
+
+
+    <div class="col-sm-12 header-title">
+      <h1 class="home-title">ひとつずつを大切にする、最初のきっかけ</h1>
+      <p class="home-text">
+        <!-- 自分がどれだけの"もの"を持っているか考えたことはありますか。<br> -->
+<!-- 壊れたり、破れたりする前に"もの"を捨てることがどのくらいありますか。<br> -->
+<!-- この１年で捨てたものにくらべて、新しく買ったものは・・・？<br> -->
+<!-- 増えていく自分のもちもの。<br> -->
+<!-- 気に入って買ったはずなのに、持て余したり使いこなせずにいるのは"もの"の多さが原因かもしれません。<br> -->
+一つ買ったら一つ捨てる。<br>
+ものを持ちすぎないことで、ひとつひとつを大切にできるように。<br>
+買った時にはお気に入りの紹介を。<br>
+捨てる時には今までの感謝と手放してしまった理由を。<br>
+ひとつずつを大切に。</p>
+    </div>
+
+
     </div>
   </div>
-
-    <div class="row">
-
-      <% @buys.first(6).each do |buy| %>
-        <div class="col-sm-4 float-left">
-          <div class="thumbnail">            
-            <%= attachment_image_tag buy, :buy_post_image, size: '400x400' %>
-              <div class="caption">
-                  <%= buy.buy_caption %>
-              </div>
-          </div>
-        </div>
-      <% end %>
-
-    </div>
-
-</div>

@@ -20,7 +20,8 @@ class BuysController < ApplicationController
 
   def show
     @buy = Buy.find(params[:id])
-    # @release = Release.find(params[:release_id])
+    @comment = Comment.new
+    @comments = @buy.comments.order(created_at: :desc)
   end
 
   def destroy

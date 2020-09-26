@@ -14,17 +14,19 @@
       <% end %>
     </div>
     <div class="col-sm-3 offset-3">
-      <%= link_to("いいね一覧", "/users/#{@user.id}/favorites") %>
-
+          <p>いいね一覧
+          </p>
     </div>
 
   </div>
 
   <div class="row">
-    <% @buys.each do |buy| %>
+    <% @favorites.each do |favorite| %>
       <div class="col-sm-4 float-left">
         <div class="thumbnail">
-          <%=link_to buy_path(buy.id) do %>
+          <%= link_to("いいね!", "/users/#{@user.id}/likes") %>
+
+          <%=link_to "いいね一覧", buy_path(favorite.id) do %>
             <%= attachment_image_tag buy, :buy_post_image, size: '400x400' %>
               <div class="caption">
                 <%= buy.buy_caption %>

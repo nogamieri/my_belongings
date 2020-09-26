@@ -2,6 +2,7 @@ class Buy < ApplicationRecord
   belongs_to :user
   has_one :release
   has_many :favorites
+  has_many :comments, dependent: :destroy
   attachment :buy_post_image
 
   validates :buy_post_image, presence: true
@@ -11,5 +12,5 @@ class Buy < ApplicationRecord
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
-  
+
 end

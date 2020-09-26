@@ -1,0 +1,4 @@
+<%= form_with(model: [buy, comment], url: buy_comments_path(buy), remote: true) do |f| %>
+  <%= f.text_area :content, class: "input-mysize" %>
+  <%= f.submit "送信", class: "btn btn-outline-dark comment-submit float-right" %>
+<% end %>

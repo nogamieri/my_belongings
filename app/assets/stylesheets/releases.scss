@@ -1,3 +1,24 @@
 // Place all the styles related to the Releases controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.container-fluid {
+margin-right: auto;
+margin-left: auto;
+max-width: 900px;
+}
+
+.box-release{
+  background: #fff;
+  padding-top: 15px;
+}
+.release-info {
+  padding-top: 20px;
+}
+.box {
+position: relative;
+}
+.box img {
+background: #fff;
+padding: 10px 10px 40px 10px;
+border: 1px solid #c3c3c3;
+}
