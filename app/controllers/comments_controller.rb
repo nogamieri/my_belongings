@@ -4,14 +4,14 @@ class CommentsController < ApplicationController
     @comment = @buy.comments.build(comment_params)
     @comment.user_id = current_user.id
     @comment.save
-    render :index
+    render :create
   end
 
   def destroy
     @buy = Buy.find(params[:buy_id])
     @comment = Comment.find(params[:id])
     @comment.destroy
-    render :index
+    render :create
   end
 
   private
