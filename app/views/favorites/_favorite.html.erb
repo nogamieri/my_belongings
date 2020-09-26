@@ -1,12 +1,12 @@
 <% if user_signed_in? %>
     <% if buy.favorited_by?(current_user) %>
         <div><%=link_to buy_favorites_path(buy.id), method: :delete, remote: true do %>
-          <button type="button">いいね済<i class="fa fa-heart fav-btn fa-2x" aria-hidden="true"></i></button></div>
+          <button type="button">お気に入り済<i class="fa fa-heart fav-btn fa-2x" aria-hidden="true"></i></button></div>
         <% end %>
 
     <% else %>
         <div><%=link_to buy_favorites_path(buy.id), method: :post, remote: true do %>
-          <button type="button">いいね<i class="fa fa-heart-o unfav-btn fa-2x" aria-hidden="true"></i></button></div>
+          <button type="button">お気に入り<i class="fa fa-heart-o unfav-btn fa-2x" aria-hidden="true"></i></button></div>
           <% end %>
     <% end %>
 <% else %>

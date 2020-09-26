@@ -1,8 +1,8 @@
 <section class="sct-color-1 slice">
   <div class="container-fluid box-buy">
     <div class="row user-info">
-
       <div class="media profile-block">
+
         <div class="col-sm-1">
           <div class="media-left media-top">
             <div class="media-object">
@@ -33,6 +33,7 @@
           <%= attachment_image_tag @buy, :buy_post_image, size: '650x650', class: 'img-responsive center-block' %>
         </div>
         <div class="detail-block">
+
           <div class="buy-message">
             <%= @buy.buy_message %>
           </div>
@@ -53,7 +54,6 @@
               <%= link_to new_buy_release_path(@buy) do %>
                 <button type="button" class="btn btn-outline-info btn-sm">かわりに手放す物を投稿</button>
               <% end %>
-
             <% else %>
             <% end %>
 
@@ -64,25 +64,25 @@
             <% end %>
           </div>
         </div>
-        <!-- コメント投稿 -->
-          <div class="comments-area">
-            <div class="comment-title">
-              <h3 class="text-left", style="font-size:16px;">comments(<%= @comments.count %>)</h3>
-            </div>
-            <ul>
-              <li id="comments-area">
-                <%= render partial: 'comments/index', locals: { comments: @comments } %>
-              </li>
-            </ul>
-
-            <hr>
-            <% if user_signed_in? %>
-              <div class="comment-create">
-                <h3 class="text-left">comments</h3>
-                <%= render partial: 'comments/form', locals: { comment: @comment, buy: @buy } %>
-              </div>
-            <% end %>
+        <!-- コメント -->
+        <div class="comments-area">
+          <div class="comment-title">
+            <p>comments(<%= @comments.count %>)</p>
           </div>
+          <ul>
+            <li id="comments-area">
+              <%= render partial: 'comments/index', locals: { comments: @comments } %>
+            </li>
+          </ul>
+
+          <hr>
+          <% if user_signed_in? %>
+            <div class="comment-create">
+              <h3 class="text-left">comments</h3>
+              <%= render partial: 'comments/form', locals: { comment: @comment, buy: @buy } %>
+            </div>
+          <% end %>
+        </div>
     </div>
   </div>
 </section>

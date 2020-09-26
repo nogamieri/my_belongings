@@ -1,27 +1,40 @@
 <div class="container">
-  <h2>新規投稿</h2>
-  <%= form_with(model: @buy, local: true) do |f| %>
+  <div class="post-field">
 
+    <div class="row">
+      <div class="form-group col-xs-4">
+        <h2>新規投稿</h2>
+      </div>
+    </div>
+
+    <%= form_with(model: @buy, local: true) do |f| %>
 
     <div class="row">
       <div class="form-group col-xs-4">
         <%= f.attachment_field :buy_post_image %>
       </div>
-
-      <div class="form-group col-xs-4">
-        <div>
-          <%= f.label :タイトル %>
-          <%= f.text_field :buy_caption, class:"form-control" %>
-        </div>
-        <div>
-          <%= f.label :本文 %>
-          <%= f.text_area :buy_message, class:"form-control" %>
-        </div>
-        <div>
-          <%= f.submit "投稿する", class:"btn btn-sm btn-block mt-20 btn-info" %>
-        </div>
-      </div>
-
     </div>
 
-  <% end %>
+    <div class="row">
+      <div class="form-group col-xs-4">
+          <%= f.label :タイトル %>
+          <%= f.text_field :buy_caption, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-xs-4">
+          <%= f.label :本文 %>
+          <%= f.text_area :buy_message, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-xs-4">
+          <%= f.submit "投稿する", class:"btn btn-sm btn-block mt-20 btn-info" %>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+</div>

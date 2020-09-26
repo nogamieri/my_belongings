@@ -11,15 +11,14 @@
 
   <body>
   <div class="container">
-    <!-- <nav class="navbar"> -->
 
       <header class="menu">
         <div class="header-block">
           <div class="row">
             <% if user_signed_in? %>
             <!-- ログイン後メニュー -->
-              <div class="col-sm-4">
-                <h1 class="site-title">
+              <div class="col-sm-4 site-title">
+                <h1>
                   <%= link_to buys_path do %>
                     <%= image_tag "logo.png", width: '50%', height: '50%' %>
                   <% end %>
@@ -27,13 +26,13 @@
               </div>
 
               <div class="col-sm-4 col-sm-offset-4">
-              <nav class="pc-nav">
-                <ul class="header-menu">
-                  <li class="menu-list "><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-                  <li class="menu-list"><%= link_to "投稿フォーム", new_buy_path %></li>
-                  <li class="menu-list"><%= link_to "マイページ", user_path(current_user.id) %></li>
-                </ul>
-              </nav>
+                <nav class="pc-nav">
+                  <ul class="header-menu">
+                    <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+                    <li><%= link_to "投稿フォーム", new_buy_path %></li>
+                    <li><%= link_to "マイページ", user_path(current_user.id) %></li>
+                  </ul>
+                </nav>
               </div>
               <% else %>
               <!-- ログイン前メニュー -->
@@ -48,8 +47,8 @@
               <div class="col-sm-3 col-sm-offset-5">
               <nav class="pc-nav">
                   <ul class="header-menu">
-                      <li class="menu-list"><%= link_to "新規登録", new_user_registration_path %></li>
-                      <li class="menu-list"><%= link_to "ログイン", new_user_session_path %></li>
+                      <li><%= link_to "新規登録", new_user_registration_path %></li>
+                      <li><%= link_to "ログイン", new_user_session_path %></li>
                   </ul>
               </nav>
               </div>
@@ -65,5 +64,8 @@
   <div class="container index-block">
     <%= yield %>
     </div>
+
+  <footer>
+  </footer>
   </body>
 </html>

@@ -4,6 +4,10 @@
 li{
   list-style: none;
 }
+.post-field{
+  background-color: white;
+  padding-left: 50px;
+}
 .profile-block {
   padding-top: 20px;
 }
@@ -12,7 +16,7 @@ li{
   padding-top: 15px;
 }
 .thumbnail {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .buy-info {
@@ -27,7 +31,7 @@ li{
 }
 
 .release_block{
-  margin: 50px 0 100px;
+  margin: 50px 0 50px;
 }
 
 .container-fluid {
@@ -68,11 +72,9 @@ h5 {
   background-color: #F6F4EF;
   font-size: 16px;
   padding-left: 30px;
-  height: 60px;
-  width: 100%;
-  margin: auto;
   box-sizing: border-box;
-  line-height:100px;
+  line-height:50px;
+  margin-bottom: 30px;
 }
 .comment-title div {
   display: table-cell;
@@ -82,4 +84,11 @@ h5 {
 .comment-area {
   width: 100%;
   padding: 20px;
+}
+.user-box {
+  padding: 0 10px 5px;
+}
+.comment-create {
+  padding-left: 25px;
+  margin-bottom: 30px;
 }

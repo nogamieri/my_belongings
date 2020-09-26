@@ -4,7 +4,7 @@
     <div class="col-sm-1">
       <%= attachment_image_tag @user, :profile_image, size: '60x60', fallback: "no_image.jpg" %>
     </div>
-    <div class="col-sm-5 offset-1">
+    <div class="col-sm-5">
       <h3 class="profile-box"><%= @user.name %></h3>
       <% if @user.id == current_user.id %>
           <p class="profile-box"><%= link_to edit_user_path(@user) do %>
@@ -13,9 +13,10 @@
           <% end %>
       <% end %>
     </div>
-    <div class="col-sm-3 offset-3">
-      <%= link_to("いいね一覧", "/users/#{@user.id}/favorites") %>
-
+    <div class="col-sm-3 col-sm-offset-3">
+      <%= link_to("/users/#{@user.id}/favorites") do %>
+      <button type="button" class="btn btn-default">お気に入り</button>
+      <% end %>
     </div>
 
   </div>
