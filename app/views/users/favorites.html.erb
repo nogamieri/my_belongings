@@ -5,12 +5,11 @@
     </div>
 
     <div class="row">
-      <% @favorites.first(1).each do |favorite| %>
-      <% @buys.each do |buy| %>
+      <% @favorites_buys.each do |buy| %>
 
           <div class="col-sm-4 float-left">
             <div class="thumbnail">
-              <%=link_to buy_path(favorite.buy_id) do %>
+              <%=link_to buy_path(buy.id) do %>
                 <%= attachment_image_tag buy, :buy_post_image, size: '400x400' %>
               <% end %>
               <div class="caption">
@@ -23,7 +22,6 @@
             <%= attachment_image_tag buy.user, :profile_image, size: '60x60' %>
             <%= buy.user.name %>
           </div>
-          <% end %>
       <% end %>
     </div>
 
