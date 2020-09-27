@@ -18,7 +18,7 @@ class ReleasesController < ApplicationController
 
   def show
     @release = Release.find(params[:id])
-    @buy = Buy.find(params[:id])
+    @buy = Buy.find(params[:buy_id])
   end
   def destroy
     @release = Release.find(params[:id])

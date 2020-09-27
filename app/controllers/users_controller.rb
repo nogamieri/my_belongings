@@ -18,7 +18,6 @@ class UsersController < ApplicationController
   def favorites
     @user = User.find_by(id: params[:id])
     @favorites_buys = @user.favorite_buys
-    @buys = Buy.all.order("created_at DESC")
   end
 
 
