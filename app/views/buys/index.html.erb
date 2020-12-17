@@ -10,12 +10,16 @@
                 <i class="fa fa-heart fa-1x" style="color: red;"></i> <%= buy.favorites.count %>
 
                 <i class="fa fa-comment-o" aria-hidden="true"></i> <%= buy.comments.count %>
+                <div class="caption_byuser">
+                  by <%= buy.user.name %>
+                </div>
             </div>
+
         </div>
-        <div class="user-box">
+        <!-- <div class="user-box">
           <%= attachment_image_tag buy.user, :profile_image, size: '50x50' %>
           <%= buy.user.name %>
-        </div>
+        </div> -->
       </div>
     <% end %>
 
