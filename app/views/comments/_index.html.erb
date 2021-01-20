@@ -3,7 +3,7 @@
     <div class="col-sm-1 offset-3">
       <%= attachment_image_tag comment.user, :profile_image, fallback: "no_image.jpg", class:"comment-image", size: "40x40" %>
     </div>
-    <p><%= link_to "#{comment.user.name}", users_show_path(comment.user.id) %></p>
+    <p><%= link_to "#{comment.user.name}", user_path(comment.user.id) %></p>
     <p><%= comment.content %></p>
     <% if comment.user == current_user %>
       <p><%= link_to '削除', buy_comment_path(comment.buy_id, comment.id), method: :delete, remote: true %></p>
