@@ -19,9 +19,14 @@
           </div>
         </div>
 
-        <div class="col-sm-2 col-sm-offset-4">
+        <div class="col-sm-2 col-sm-offset-3">
           <div id="favorites_buttons_<%= @buy.id %>">
              <%= render partial: 'favorites/favorite', locals: { buy: @buy} %>
+             <% if @buy.user == current_user %>
+               <%= link_to buy_path(@buy),method: :delete do %>
+               <span style="font-size:small">削除</span>
+               <% end %>
+             <% end %>
           </div>
         </div>
 
@@ -40,6 +45,14 @@
             <%= @buy.buy_message %>
           </div>
 
+          <div class="col-sm-1 col-sm-offset-11">
+            <% if @buy.user == current_user %>
+              <%= link_to buy_path(@buy),method: :delete do %>
+              <button type="button" class="btn btn-outline-info btn-sm">削除</button>
+              <% end %>
+            <% end %>
+          </div>
+          <br>
           <div class="release_block">
             <% if @buy.release.present? %>
               <h5>代わりに手放したもの</h5>
@@ -59,11 +72,6 @@
             <% else %>
             <% end %>
 
-            <% if @buy.user == current_user %>
-              <%= link_to buy_path(@buy),method: :delete do %>
-              <button type="button" class="btn btn-outline-info btn-sm">削除</button>
-              <% end %>
-            <% end %>
           </div>
         </div>
         <!-- コメント -->
