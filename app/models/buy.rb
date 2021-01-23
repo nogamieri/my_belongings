@@ -1,7 +1,8 @@
 class Buy < ApplicationRecord
   belongs_to :user
   has_one :release, dependent: :destroy
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
+  has_many :favorited_users, through: :favorites, source: :user
   has_many :comments, dependent: :destroy
   attachment :buy_post_image
 

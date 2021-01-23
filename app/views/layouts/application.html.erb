@@ -28,9 +28,10 @@
               <div class="col-sm-4 col-sm-offset-4">
                 <nav class="pc-nav">
                   <ul class="header-menu">
-                    <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-                    <li><%= link_to "投稿フォーム", new_buy_path %></li>
+                    <li><%= link_to "新規投稿", new_buy_path %></li>
+                    <li><%= link_to "ランキング", buys_rank_path %></li>
                     <li><%= link_to "マイページ", user_path(current_user.id) %></li>
+                    <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
                   </ul>
                 </nav>
               </div>

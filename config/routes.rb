@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root 'homes#top'
   get 'users/show'
   get "users/:id/favorites" => "users#favorites"
+  get 'buys/rank' => 'buys#rank'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
