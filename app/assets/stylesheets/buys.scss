@@ -4,6 +4,14 @@
 li{
   list-style: none;
 }
+.page-title {
+  font-size: 22px;
+  padding-left: 50px;
+}
+.page-title span {
+  font-size: 12px;
+  margin-left: 10px;
+}
 .post-field{
   background-color: white;
   padding-left: 50px;
@@ -99,4 +107,15 @@ h5 {
 .comment-create {
   padding-left: 25px;
   margin-bottom: 30px;
+}
+
+.ranking {
+  position: absolute;
+  top: 20px;
+  margin: 0;
+  color: white;
+  background-color: #9100ff;
+  font-size: 15px;
+  line-height: 1;
+  padding: 5px 10px;
 }

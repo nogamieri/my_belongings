@@ -1,10 +1,14 @@
 <div class="row">
-  <h2>お気に入りランキング</h2>
-  <% @buy_favorites.each do |buy_favorites| %>
+  <div class="page-title">
+    Ranking<span>お気に入りランキング</span>
+  </div>
+
+  <% @buy_favorites.each.with_index(1) do |buy_favorites, i| %>
     <div class="col-sm-4 float-left">
       <div class="thumbnail">
         <%=link_to buy_path(buy_favorites.id) do %>
         <%= attachment_image_tag buy_favorites, :buy_post_image, size: '400x400' %>
+        <p class="ranking"><%= i %>位</p>
         <% end %>
           <div class="caption">
               <%= buy_favorites.buy_caption %>
