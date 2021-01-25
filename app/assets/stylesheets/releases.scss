@@ -2,9 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .container-fluid {
-margin-right: auto;
-margin-left: auto;
-max-width: 900px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 900px;
 }
 .post-field{
   background-color: white;
@@ -18,10 +18,10 @@ max-width: 900px;
   padding-top: 20px;
 }
 .box {
-position: relative;
+  position: relative;
 }
 .box img {
-background: #fff;
-padding: 10px 10px 40px 10px;
-border: 1px solid #c3c3c3;
+  background: #fff;
+  padding: 10px 10px 40px 10px;
+  border: 1px solid #c3c3c3;
 }
